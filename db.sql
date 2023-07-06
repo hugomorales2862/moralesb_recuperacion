@@ -1,5 +1,5 @@
-CREATE DATABASE viviendas;
 
+CREATE DATABASE vivienda 
 CREATE TABLE viviendas (
     ID INT NOT NULL PRIMARY KEY,
     nombre_condominio VARCHAR(50) NOT NULL,
