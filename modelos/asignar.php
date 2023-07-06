@@ -20,7 +20,17 @@ class asignar extends Conexion {
         return $resultado;
     }
     
+    public function inf(){
+        $sql ="SELECT visita_vivienda.id, nombre AS visitante, dpi, nombre_condominio AS condominio, 
+        numero_vivienda, propietaria, hora_ingreso, hora_salida 
+ FROM visita_vivienda 
+ INNER JOIN visitas ON visita_vivienda.visita = visitas.id 
+ INNER JOIN viviendas ON visita_vivienda.vivienda = viviendas.id 
+ ORDER BY hora_ingreso;";
 
+        $resultado = self::servir($sql);
+        return $resultado;
+    } 
 
     public function buscar() {
         $sql = "SELECT v.nombre AS nombre_visitante, vi.nombre_condominio, vi.numero_vivienda, vi.propietaria
