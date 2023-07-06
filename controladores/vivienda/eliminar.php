@@ -1,5 +1,5 @@
 <?php
-require_once '../modelos/Vivienda.php';
+require_once '../../modelos/Vivienda.php';
 
 try {
     $vivienda = new Vivienda($_GET);

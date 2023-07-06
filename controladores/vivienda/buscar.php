@@ -1,6 +1,10 @@
 
 <?php
-require_once '../modelos/Vivienda.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once '../../modelos/Vivienda.php';
 try {
   
     $vivienda = new Vivienda($_GET);
@@ -48,7 +52,7 @@ try {
                             <td><?= $key + 1 ?></td>
                             <td><?= $vivienda['NOMBRE_CONDOMINIO'] ?></td>
                             <td><?= $vivienda['NUMERO_VIVIENDA'] ?></td>
-                            <td><?= $vivienda['PRPIETARIA'] ?></td>
+                            <td><?= $vivienda['PROPIETARIA'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/moralesb_recuperacion/vistas/vivienda/modificar.php?ID=<?= $vivienda['ID']?>">Modificar</a></td>
                             <td><a class="btn btn-danger w-100" href="/moralesb_recuperacion/controladores/vivienda/eliminar.php?ID=<?= $vivienda['ID']?>">Eliminar</a></td>
                         </tr>
