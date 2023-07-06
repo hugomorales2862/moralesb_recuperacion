@@ -4,14 +4,14 @@
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
-require_once '../../modelos/Vivienda.php';
+require_once '../../modelos/Visita.php';
 try {
   
-    $vivienda = new Vivienda($_GET);
-    // var_dump($vivienda);
+    $visita = new Visita($_GET);
+    // var_dump($visita);
     // exit;
     
-    $viviendas = $vivienda->buscar();
+    $visitas = $visita->buscar();
   
 } catch (PDOException $e) {
     $error = $e->getMessage();
@@ -38,23 +38,25 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>NOMBRE DEL CONDOMINIO</th>
-                            <th>NUMERO DE VIVIENDA</th>
-                            <th>PROPIETARIO (A)</th>
+                            <th>NOMBRES DEL VISITANTE</th>
+                            <th>DPI DEL VISITANTE</th>
+                            <th>HORA DE INGRESO</th>
+                            <th>HORA DE SALIDA</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($viviendas) > 0):?>
-                        <?php foreach($viviendas as $key => $vivienda) : ?>
+                        <?php if(count($visitas) > 0):?>
+                        <?php foreach($visitas as $key => $visita) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $vivienda['NOMBRE_CONDOMINIO'] ?></td>
-                            <td><?= $vivienda['NUMERO_VIVIENDA'] ?></td>
-                            <td><?= $vivienda['PROPIETARIA'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/moralesb_recuperacion/vistas/vivienda/modificar.php?ID=<?= $vivienda['ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/moralesb_recuperacion/controladores/vivienda/eliminar.php?ID=<?= $vivienda['ID']?>">Eliminar</a></td>
+                            <td><?= $visita['NOMBRE'] ?></td>
+                            <td><?= $visita['DPI'] ?></td>
+                            <td><?= $visita['HORA_INGRESO'] ?></td>
+                            <td><?= $visita['HORA_SALIDA'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/moralesb_recuperacion/vistas/visita/modificar.php?ID=<?= $visita['ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/moralesb_recuperacion/controladores/visita/eliminar.php?ID=<?= $visita['ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -68,7 +70,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/moralesb_recuperacion/vistas/vivienda/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/moralesb_recuperacion/vistas/visita/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
