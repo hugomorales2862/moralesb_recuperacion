@@ -5,20 +5,16 @@
 // error_reporting(E_ALL);
 
 require_once '../../modelos/asignar.php';
+require_once '../../modelos/Visita.php';
+require_once '../../modelos/asignar.php';
 try {
-  
     $asignar = new asignar($_GET);
-    // var_dump($asignar);
-    // exit;
-    
     $asignars = $asignar->buscar();
-  
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2){
     $error = $e2->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -38,10 +34,10 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>VISITA</th>
+                            <th>VISITANTE</th>
                             <th>VIVIENDA</th>
-                            <th>MODIFICAR</th>
-                            <th>ELIMINAR</th>
+                            <th>PRPIETARIO (A)</th>
+                            <th>NUMERO DE VIVIENDA</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,10 +45,10 @@ try {
                         <?php foreach($asignars as $key => $asignar) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $asignar['VISITA'] ?></td>
-                            <td><?= $asignar['VIVIENDA'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/moralesb_recuperacion/vistas/asignar/modificar.php?ID=<?= $asignar['ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/moralesb_recuperacion/controladores/asignar/eliminar.php?ID=<?= $asignar['ID']?>">Eliminar</a></td>
+                            <td><?= $asignar['NOMBRE_VISITANTE'] ?></td>
+                            <td><?= $asignar['NOMBRE_CONDOMINIO'] ?></td>
+                            <td><?= $asignar['PROPIETARIA'] ?></td>
+                            <td><?= $asignar['NUMERO_VIVIENDA'] ?></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
