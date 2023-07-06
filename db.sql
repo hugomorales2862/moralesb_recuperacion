@@ -18,11 +18,11 @@ CREATE TABLE visitas (
 );
 
 CREATE TABLE visita_vivienda (
-    fecha DATE NOT NULL,
+    ID SERIAL NOT NULL,
     visita INT,
     vivienda INT NOT NULL,
     situacion char (1) DEFAULT '1',
-    PRIMARY KEY (fecha, visita, vivienda),
+    PRIMARY KEY (ID, visita, vivienda),
     FOREIGN KEY (visita) REFERENCES visitas(ID),
     FOREIGN KEY (vivienda) REFERENCES viviendas(ID)
 );
