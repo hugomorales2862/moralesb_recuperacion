@@ -22,14 +22,15 @@ class Visita extends Conexion
 
     public function guardar()
     {
-        $sql = "INSERT INTO viviendas(nombre, dpi, hora_ingreso, hora_salida, situacion) VALUES ('$this->nombre', '$this->dpi', '$this->hora_ingreso', '$this->hora_salida', '$this->situacion')";
+        $sql = "INSERT INTO visitas(nombre, dpi, hora_ingreso, hora_salida, situacion) VALUES ('$this->nombre', '$this->dpi', '$this->hora_ingreso', '$this->hora_salida', '$this->situacion')";
+       echo $sql;
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar()
     {
-        $sql = "SELECT * FROM viviendas WHERE situacion = 1";
+        $sql = "SELECT * FROM visitas WHERE situacion = 1";
 
         if ($this->nombre != '') {
             $sql .= " AND nombre LIKE '%$this->nombre%'";
@@ -60,7 +61,7 @@ class Visita extends Conexion
 
     public function modificar()
     {
-        $sql = "UPDATE viviendas SET nombre = '$this->nombre', dpi = '$this->dpi', hora_ingreso = '$this->hora_ingreso',hora_salida = '$this->hora_salida', situacion = '$this->situacion' WHERE ID= '$this->ID'";
+        $sql = "UPDATE visitas SET nombre = '$this->nombre', dpi = '$this->dpi', hora_ingreso = '$this->hora_ingreso',hora_salida = '$this->hora_salida', situacion = '$this->situacion' WHERE ID= '$this->ID'";
         // echo $sql;
     
         $resultado = self::ejecutar($sql);
@@ -68,7 +69,7 @@ class Visita extends Conexion
     }
 
     public function eliminar() {
-        $sql = "UPDATE viviendas SET situacion = '0' WHERE ID = $this->ID";
+        $sql = "UPDATE visitas SET situacion = '0' WHERE ID = $this->ID";
         
         $resultado = self::ejecutar($sql);
         return $resultado;

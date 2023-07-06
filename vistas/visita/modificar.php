@@ -21,21 +21,21 @@ try {
             <div class="row mb-3">
                 <div class="col">
                     <label for="nombre">nombre</label>
-                    <input type="text" name="nombre" id="nombre" value="<?= $visitas[0]['NOMBRE_CONDOMINIO'] ?>" class="form-control" required>
+                    <input type="text" name="nombre" id="nombre" value="<?= $visitas[0]['NOMBRE'] ?>" class="form-control" required>
                 </div>
                 <div class="col">
                     <label for="dpi">Numero de DPI</label>
-                    <input type="number" name="dpi" id="dpi" value="<?= $visitas[0]['NUMERO_visita'] ?>" class="form-control" required>
+                    <input type="number" name="dpi" id="dpi" value="<?= $visitas[0]['DPI'] ?>" class="form-control" required>
 
                 </div>
                 <div class="col">
                     <label for="hora_ingreso">Hora de ingreso </label>
-                    <input type="text" name="hora_ingreso" id="hora_ingreso" value="<?= $visitas[0]['propietaria'] ?>" class="form-control" required>
+                    <input type="text" name="hora_ingreso" id="hora_ingreso" value="<?= $visitas[0]['HORA_INGRESO'] ?>" class="form-control" >
 
                 </div>
                 <div class="col">
                     <label for="hora_salida">Hora de salida</label>
-                    <input type="text" name="hora_salida" id="hora_salida" value="<?= $visitas[0]['propietaria'] ?>" class="form-control" required>
+                    <input type="text" name="hora_salida" id="hora_salida" value="<?= $visitas[0]['HORA_SALIDA'] ?>" class="form-control" >
 
                 </div>
               

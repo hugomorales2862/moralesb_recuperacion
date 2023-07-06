@@ -1,17 +1,20 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once '../../modelos/Visita.php';
 
-if ($_POST['nombre'] != '' && $_POST['dpi'] != '' && $_POST['hora_ingreso'] != '' && $_POST['hora_salida'] != '') {
+$_POST['hora_ingreso'] = str_replace('T',' ', $_POST['hora_ingreso']);
+$_POST['hora_salida'] = str_replace('T',' ', $_POST['hora_salida']);
+
+
+if ($_POST['hora_salida'] === '') {
+    $_POST['hora_salida'] = null;
+}
+
+if ($_POST['nombre'] != '' && $_POST['dpi'] != '' && $_POST['hora_ingreso'] != '') {
     try {
         $visita = new Visita($_POST);
         $resultado = $visita->guardar();
         if ($resultado) {
-            // La visita se guardó correctamente
-            // Aquí puedes realizar alguna acción adicional si es necesario
+        
         } else {
             $error = "NO se guardó correctamente";
         }
@@ -23,7 +26,6 @@ if ($_POST['nombre'] != '' && $_POST['dpi'] != '' && $_POST['hora_ingreso'] != '
 } else {
     $error = "Debe llenar todos los datos";
 }
-
 
 ?>
 

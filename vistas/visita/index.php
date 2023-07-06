@@ -18,7 +18,7 @@
         </div>
         <div class="col">
           <label for="hora_salida" class="form-label">Ingrese la Hora de salida</label>
-          <input type="datetime-local" name="hora_salida" id="hora_salida" class="form-control" required>
+          <input type="datetime-local" name="hora_salida" id="hora_salida" class="form-control" >
         </div>
         </div>
       </div>

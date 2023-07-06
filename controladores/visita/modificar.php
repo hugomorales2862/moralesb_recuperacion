@@ -1,7 +1,7 @@
 <?php
 require_once '../../modelos/Visita.php';
 
-if ($_POST['nombre'] != '' && $_POST['dpi'] != '' && $_POST['hora_ingreso'] != '' && $_POST['hora_salida'] != '') {
+if ($_POST['nombre'] != '' && $_POST['dpi'] != '' ) {
     //var_dump($_POST);
 
    
