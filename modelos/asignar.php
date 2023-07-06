@@ -1,6 +1,6 @@
 <?php
 require_once 'Conexion.php';
-class Asignar extends Conexion {
+class asignar extends Conexion {
     public $ID;
     public $visita;
     public $vivienda;
@@ -23,28 +23,17 @@ class Asignar extends Conexion {
 
 
     public function buscar() {
-        $sql = "SELECT ID, visita, vivienda, situacion FROM visita_vivienda";
-
-        if ($this->ID != null) {
-            $sql .= " WHERE ID = $this->ID";
-        }
-
-        if ($this->visita != '') {
-            $sql .= " AND visita LIKE '%$this->visita%'";
-        }
-
-        if ($this->vivienda != '') {
-            $sql .= " AND vivienda LIKE '%$this->vivienda%'";
-        }
-
-        if ($this->situacion != '') {
-            $sql .= " AND situacion = '$this->situacion'";
-        }
-
+        $sql = "SELECT v.nombre AS nombre_visitante, vi.nombre_condominio, vi.numero_vivienda, vi.propietaria
+                FROM visita_vivienda vv
+                INNER JOIN visitas v ON vv.visita = v.ID
+                INNER JOIN viviendas vi ON vv.vivienda = vi.ID
+                WHERE v.nombre LIKE '%HUGO%' AND vv.situacion = '1'";
+    
+        // echo $sql;
         $resultado = self::servir($sql);
         return $resultado;
     }
-
+    
     public function modificar() {
         $sql = "UPDATE visita 
                 SET visita = '$this->visita', vivienda = '$this->vivienda', 
