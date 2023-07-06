@@ -1,5 +1,5 @@
 <?php
-require_once './Conexion.php';
+require_once 'Conexion.php';
 
 class Vivienda extends Conexion
 {
@@ -55,8 +55,9 @@ class Vivienda extends Conexion
 
     public function modificar()
     {
-        $sql = "UPDATE viviendas SET nombre_condominio = '$this->nombre_condominio', numero_vivienda = '$this->numero_vivienda', propietaria = '$this->propietaria', situacion = '$this->situacion' WHERE ID = $this->ID";
-
+        $sql = "UPDATE viviendas SET nombre_condominio = '$this->nombre_condominio', numero_vivienda = '$this->numero_vivienda', propietaria = '$this->propietaria', situacion = '$this->situacion' WHERE ID= '$this->ID'";
+        // echo $sql;
+    
         $resultado = self::ejecutar($sql);
         return $resultado;
     }

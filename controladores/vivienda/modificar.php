@@ -1,9 +1,10 @@
 <?php
-require_once '../modelos/Vivienda.php';
+require_once '../../modelos/Vivienda.php';
 
 //var_dump($_POST);
 if ($_POST['nombre_condominio'] != '' && $_POST['numero_vivienda'] != '' && $_POST['propietaria'] != ''){
 
+    // echo $sql;
 
     try {
         $vivienda = new Vivienda($_POST);
