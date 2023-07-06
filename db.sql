@@ -18,7 +18,7 @@ CREATE TABLE visitas (
 CREATE TABLE visita_vivienda (
     fecha DATE NOT NULL,
     visita INT,
-    vivienda INT,
+    vivienda INT NOT NULL,
     PRIMARY KEY (fecha, visita, vivienda),
     FOREIGN KEY (visita) REFERENCES visitas(ID),
     FOREIGN KEY (vivienda) REFERENCES viviendas(ID)
