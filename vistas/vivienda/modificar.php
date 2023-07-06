@@ -25,7 +25,7 @@ try {
                 </div>
                 <div class="col">
                     <label for="numero_vivienda">Numero de Vivienda</label>
-                    <input type="text" name="numero_vivienda" id="numero_vivienda" value="<?= $viviendas[0]['NUMERO_VIVIENDA'] ?>" class="form-control" required>
+                    <input type="number" name="numero_vivienda" id="numero_vivienda" value="<?= $viviendas[0]['NUMERO_VIVIENDA'] ?>" class="form-control" required>
 
                 </div>
                 <div class="col">
