@@ -1,5 +1,5 @@
 <?php
-require_once 'Conexion.php';
+require_once './Conexion.php';
 
 class Vivienda extends Conexion
 {
@@ -30,7 +30,7 @@ class Vivienda extends Conexion
         $sql = "SELECT * FROM viviendas WHERE situacion = 1";
 
         if ($this->nombre_condominio != '') {
-            $sql .= " AND gra_nombre LIKE '%$this->gra_nombre%'";
+            $sql .= " AND nombre_condominio LIKE '%$this->nombre_condominio%'";
         }
         if ($this->numero_vivienda != '') {
             $sql .= " AND numero_vivienda LIKE '%$this->numero_vivienda%'";
