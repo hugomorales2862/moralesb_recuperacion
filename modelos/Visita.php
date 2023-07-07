@@ -23,7 +23,7 @@ class Visita extends Conexion
     public function guardar()
     {
         $sql = "INSERT INTO visitas(nombre, dpi, hora_ingreso, hora_salida, situacion) VALUES ('$this->nombre', '$this->dpi', '$this->hora_ingreso', '$this->hora_salida', '$this->situacion')";
-       echo $sql;
+    //    echo $sql;
         $resultado = self::ejecutar($sql);
         return $resultado;
     }

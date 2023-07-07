@@ -49,7 +49,7 @@
                             <a class="nav-link" href="/moralesb_recuperacion/vistas/asignar/buscar.php">Buscar Visitas asignadas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/moralesb_recuperacion/vistas/asignar/buscar.php">Ver detalle de Visitas</a>
+                            <a class="nav-link" href="/moralesb_recuperacion/vistas/asignar/detalle.php">Ver detalle de Visitas</a>
                         </li>
                     </ul>
                 </li>
